@@ -11,6 +11,6 @@
  * @return bool
  */
 function ci_testing() {
-	// Some inline comment
+	// Some inline comment.
 	return true;
 }
