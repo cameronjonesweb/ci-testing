@@ -1,23 +1,26 @@
 # Travis CI configuration file.
 # @link https://travis-ci.org/
 
+# Ditch sudo and use containers.
+# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+sudo: false
+
 # Declare project language and PHP versions to test against.
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
-php:
-  - php: '5.6'
-  - php: '7.0'
-  - php: '7.1'
-    env: SNIFF=1
-  - php: '7.2'
-  - php: '7.3'
+matrix:
+  fast_finish: true
 
-# Ditch sudo and use containers.
-# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
-sudo: false
+  include:
+    - php: '5.6'
+    - php: '7.0'
+    - php: '7.1'
+      env: SNIFF=1
+    - php: '7.2'
+    - php: '7.3'
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
