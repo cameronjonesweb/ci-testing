@@ -23,9 +23,15 @@ jobs:
 
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
 
-      - run: git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git /tmp/phpcs
-      - run: git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /tmp/sniffs
+      - run:
+          name: "Setup custom environment variables"
+          command: |
+            echo 'export PHPCS_DIR=/tmp/phpcs' >> $BASH_ENV
+            echo 'export SNIFFS_DIR=/tmp/sniffs' >> $BASH_ENV
 
-      - run: /tmp/phpcs/bin/phpcs --config-set installed_paths /tmp/sniffs
+      - run: git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
+      - run: git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR
 
-      - run: /tmp/phpcs/bin/phpcs -p . --standard=WordPress
+      - run: $PHPCS_DIR/bin/phpcs --config-set installed_paths $SNIFFS_DIR
+
+      - run: $PHPCS_DIR/bin/phpcs -p . --standard=WordPress
