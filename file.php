@@ -15,7 +15,12 @@ function ci_testing() {
 	return true;
 }
 
-function CamelCase() {
-	// this should fail
+/**
+ * Should work now
+ *
+ * @return bool
+ */
+function snake_case() {
+	// this shouldn't fail.
 	return false;
 }
