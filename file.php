@@ -21,6 +21,6 @@ function ci_testing() {
  * @return bool
  */
 function snake_case() {
-	// this shouldn't fail.
+	// this should fail
 	return false;
 }
