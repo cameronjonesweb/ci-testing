@@ -11,3 +11,7 @@ This repo is just some examples of how to integrate your WordPress project with 
 ### CircleCI
 
 ![CircleCI Build Status](https://circleci.com/gh/cameronjonesweb/ci-testing.svg?style=svg)
+
+### BitBucket
+
+_BitBucket doesn't provide build status badges but they do display on the repository overview. If your repo is public you can use [shields.io](https://shields.io)_
