@@ -3,7 +3,7 @@ language: php
 matrix:
   include:
     # Arbitrary PHP version to run the sniffs against.
-    - php: '7.0'
+    - php: '7.1'
 
 before_install:
   - export PHPCS_DIR=/tmp/phpcs
