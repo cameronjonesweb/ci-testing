@@ -14,3 +14,8 @@ function ci_testing() {
 	// Some inline comment.
 	return true;
 }
+
+function CamelCase() {
+	// this should fail
+	return false;
+}

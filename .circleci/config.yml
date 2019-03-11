@@ -22,12 +22,10 @@ jobs:
       - checkout
 
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-install phpenv
 
       - run: git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git /tmp/phpcs
       - run: git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /tmp/sniffs
 
       - run: /tmp/phpcs/bin/phpcs --config-set installed_paths /tmp/sniffs
-      - run: phpenv rehash
 
       - run: /tmp/phpcs/bin/phpcs -p . --standard=WordPress
