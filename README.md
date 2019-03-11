@@ -1,6 +1,6 @@
 # WordPress Coding Standards CI
 
-This repo is just some examples of how to integrate your WordPress project with CI services such as Travis and CircleCI.
+This repo is just some examples of how to integrate your WordPress project with CI services such as Travis, CircleCI and BitBucket Pipelines.
 
 ## Status
 
