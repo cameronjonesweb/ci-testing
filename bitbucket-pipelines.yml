@@ -8,7 +8,7 @@ pipelines:
   default:
     - step:
         script:
-          - apt-get update && apt-get install -y unzip
+          - apt-get update && apt-get install -y unzip git
           - export PHPCS_DIR=/tmp/phpcs
           - export SNIFFS_DIR=/tmp/sniffs
           - git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
