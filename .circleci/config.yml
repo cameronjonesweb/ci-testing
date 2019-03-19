@@ -34,4 +34,4 @@ jobs:
 
       - run: $PHPCS_DIR/bin/phpcs --config-set installed_paths $SNIFFS_DIR
 
-      - run: $PHPCS_DIR/bin/phpcs -p . --standard=WordPress
+      - run: $PHPCS_DIR/bin/phpcs -p . --standard=WordPress --extensions=php --runtime-set ignore_warnings_on_exit 1
