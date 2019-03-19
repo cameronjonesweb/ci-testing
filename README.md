@@ -14,4 +14,6 @@ This repo is just some examples of how to integrate your WordPress project with 
 
 ### BitBucket
 
-_BitBucket doesn't provide build status badges but they do display on the repository overview. If your repo is public you can use [shields.io](https://shields.io)_
+![BitBucket Build Status](https://img.shields.io/bitbucket/pipelines/cameronl26/ci-testing.svg)
+
+_BitBucket doesn't provide native build status badges but they do display on the repository overview. If your repo is public you can use [shields.io](https://shields.io)_
