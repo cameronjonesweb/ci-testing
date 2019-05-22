@@ -2,15 +2,12 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: php:7.1.1
+image: php:7.1-stretch
 
 pipelines:
   default:
     - step:
         script:
-          - cat /etc/debian_version
-          - apt-get upgrade
-          - sed -i 's/jessie/stretch/g' /etc/apt/sources.list
           - apt-get update && apt-get install -y unzip git
           - export PHPCS_DIR=/tmp/phpcs
           - export SNIFFS_DIR=/tmp/sniffs
